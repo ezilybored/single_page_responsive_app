@@ -1,0 +1,91 @@
+article {
+  display: grid;
+
+  grid-template-columns: 1fr 0.5in [start] 1.25in 5in 1.25in [end] 0.5in 1fr;
+
+  padding: 0.5in 0;
+
+  background: linear-gradient(#E8E8E8, whitesmoke 6.55rem);
+
+}
+
+/* The start and end points of the grid are set in the parent css */
+/* article * means all children */
+article * {
+  grid-column: start / end
+}
+
+.size-1 {
+  grid-column: 4 / 5;
+}
+
+.size-2 {
+  grid-column: 3 / 6;
+}
+
+.size-3 {
+  grid-column: 2 / 7;
+}
+
+.size-4 {
+  grid-column: 1 / 8;
+}
+
+.size-1 img, .size-2 img, .size-3 img, .size-4 img { width: 100%; }
+
+.heading {
+  /* flexbox allows easy centering of text */
+	display: flex;
+	/* Actually centers the text */
+	justify-content: marginLeft;
+	align-items: center;
+}
+
+.sub-heading {
+  /* flexbox allows easy centering of text */
+	display: flex;
+	/* Actually centers the text */
+	justify-content: marginLeft;
+	align-items: center;
+}
+
+figcaption {
+  display: flex;
+	justify-content: left;
+  margin-top: 0.5rem;
+}
+
+/* Puts a 2 line break after every time a <h2> or a <p> happens */
+h2, p { margin-bottom: 2.4rem; }
+
+/* Puts a 1 line break after every time a <h1> happens */
+h1 { margin-bottom: 1.2rem; }
+
+h1   { font: 600 2rem/1.2 "Roboto"; color: hsl(250,   100%, 67%);}
+h2   { font: 500 1.5rem/1.2 "Roboto"; color: hsl(000,   0%, 25%);}
+time { font: 400 1rem/1.2 "Roboto"; color: hsl(000,   0%, 33%);}
+h3   { font: 400 1rem/1.2 "Roboto"; color: hsl(000,   0%, 33%);}
+p    { font: 400 1rem/1.5 "Roboto"; color: hsl(000,   0%, 33%);}
+figcaption p { font: 400 1.0rem/1.5 "Roboto"; color: hsl(000, 000%, 75%); }
+
+.share {
+  display: flex;
+	justify-content: center;
+}
+
+.share img {
+  padding: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 20px;
+}
+
+/* media query for smaller devices */
+@media (max-width: 8.5in) {
+	article { grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr; }
+  :root { font-size: 18px; }
+}
+
+@media (max-width: 5.0in) {
+  :root { font-size: 16px; }
+}
